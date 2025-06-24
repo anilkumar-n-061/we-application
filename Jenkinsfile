@@ -45,7 +45,7 @@ pipeline{
         }
          stage('Pushing image to repository'){
             steps{
-                sh 'docker push anilkumar-n-061/project-1'
+                sh 'docker push anilkumar061/project-1'
             }
         }
         
