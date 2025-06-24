@@ -9,7 +9,7 @@ pipeline{
     stages{
         stage('Git-checkout'){
             steps{
-                git branch: 'master' , url: 'https://github.com/anilkumar-n-061/we-application.git'
+                git branch: 'main' , url: 'https://github.com/anilkumar-n-061/we-application.git'
             }
         }
         stage('Code Compile'){
@@ -24,13 +24,13 @@ pipeline{
         }
         stage('Build and tag'){
             steps{
-                sh 'docker build -t manjukolkar007/project-1 .'
+                sh 'docker build -t anilkumar-n-061/project-1 .'
             }
         }
         stage('Containerisation'){
             steps{
                 sh '''
-                docker run -it -d --name c8 -p 9008:8080 manjukolkar007/project-1
+                docker run -it -d --name c8 -p 9008:8080 anilkumar-n-061/project-1
                 '''
             }
         }
@@ -45,7 +45,7 @@ pipeline{
         }
          stage('Pushing image to repository'){
             steps{
-                sh 'docker push manjukolkar007/project-1'
+                sh 'docker push anilkumar-n-061/project-1'
             }
         }
         
