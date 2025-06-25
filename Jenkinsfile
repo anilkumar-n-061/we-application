@@ -24,13 +24,13 @@ pipeline{
         }
         stage('Build and tag'){
             steps{
-                sh 'docker build -t anilkumar-n-061/project-2 .'
+                sh 'docker build -t anilkumar061/project-2 .'
             }
         }
         stage('Containerisation'){
             steps{
                 sh '''
-                docker run -it -d --name c2 -p 9010:8080 anilkumar-n-061/project-2
+                docker run -it -d --name c3 -p 9013:8080 anilkumar061/project-2
                 '''
             }
         }
